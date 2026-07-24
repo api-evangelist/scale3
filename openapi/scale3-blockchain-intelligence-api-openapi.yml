@@ -1,0 +1,380 @@
+openapi: 3.1.0
+info:
+  title: Scale3 Blockchain Intelligence API
+  version: '1.0'
+  description: The Scale3 Blockchain Intelligence Service is a REST API that provides real-time information on blockchain node software updates and network intelligence feeds across 40+ chains. Query the latest node updates (version, commit hash, release date, breaking changes, build artifacts) and the network intelligence feed (announcements aggregated from Discord and other channels) for a specific chain and network. Access requires an Enterprise license and an API key generated from the Scale3 Autopilot Intel tab. Derived from the published Scale3 documentation.
+  contact:
+    name: Scale3 Labs Support
+    email: support@scale3labs.com
+    url: https://docs.scale3labs.com/intel/blockchain-intelligence/introduction
+  x-apisjson-source: https://docs.scale3labs.com/intel/blockchain-intelligence/introduction
+servers:
+- url: https://web-backend.scale3production.com
+  description: Production
+security:
+- apiKey: []
+tags:
+- name: Blockchain Intelligence
+  description: Node software updates and network intelligence feeds
+paths:
+  /node_updates:
+    get:
+      operationId: getNodeUpdates
+      summary: Get node updates
+      description: Query node update intelligence for a specific chain and network and get the latest node software updates for that chain. Supports advanced filtering, sorting, field selection and pagination via query parameters. Requires an API key.
+      tags:
+      - Blockchain Intelligence
+      parameters:
+      - name: chain
+        in: query
+        required: true
+        description: Blockchain identifier. Supported values include aptos, algo, arb, avax, base, bnb/bsc, link, btc, bch, ada, tia, celo, atom, cro, dash, doge, eos, eth, etc, ftm, fil, flr, flow, harmony, hbar, hnt, icp, inj, kava, ksm, ltc, mina, near, op, dot, polygon, xrp, sei, sol, stx, xlm, sui, xtz, trx, ton, vet, zec.
+        schema:
+          type: string
+      - name: category
+        in: query
+        required: false
+        description: Node update category.
+        schema:
+          type: string
+      - name: repo_name
+        in: query
+        required: false
+        description: Name of repository that contains the update code.
+        schema:
+          type: string
+      - name: tag
+        in: query
+        required: false
+        description: Node update tag. The tag contains the update version.
+        schema:
+          type: string
+      - name: network
+        in: query
+        required: false
+        description: Node update network.
+        schema:
+          type: string
+          enum:
+          - mainnet
+          - testnet
+          - devnet
+      - name: client
+        in: query
+        required: false
+        description: Node update client depending on the chain. For chains with no client the default value is the chain itself (e.g. geth, lighthouse, sui).
+        schema:
+          type: string
+      - name: version
+        in: query
+        required: false
+        description: Version of the node update.
+        schema:
+          type: string
+      - name: priority
+        in: query
+        required: false
+        description: Priority/severity level of the node update.
+        schema:
+          type: string
+      - name: breaking_changes
+        in: query
+        required: false
+        description: Whether the update has breaking changes.
+        schema:
+          type: boolean
+      - name: required_for_upcoming_upgrade
+        in: query
+        required: false
+        description: Whether the update is required for an upcoming network upgrade.
+        schema:
+          type: boolean
+      - name: page_size
+        in: query
+        required: false
+        description: Size of a single page i.e. how many records to send back in the response.
+        schema:
+          type: integer
+      - name: page
+        in: query
+        required: false
+        description: Page number.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NodeUpdatesResponse'
+        '401':
+          description: Invalid api key unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+  /feed:
+    get:
+      operationId: getNetworkFeed
+      summary: Get network feed
+      description: Query the network intelligence feed for a specific chain and network and get the latest announcements (aggregated from Discord and other channels) for that chain. Supports filtering by label and client, and pagination. Requires an API key.
+      tags:
+      - Blockchain Intelligence
+      parameters:
+      - name: chain
+        in: query
+        required: true
+        description: Blockchain identifier. See getNodeUpdates for the full list of supported chains.
+        schema:
+          type: string
+      - name: labels
+        in: query
+        required: false
+        description: Type of feed. One of announcement, general information, time sensitive, software upgrade, problem, needs action.
+        schema:
+          type: string
+      - name: network
+        in: query
+        required: false
+        description: Network.
+        schema:
+          type: string
+          enum:
+          - mainnet
+          - testnet
+          - devnet
+      - name: clients
+        in: query
+        required: false
+        description: Array of clients this feed corresponds to depending on the chain.
+        schema:
+          type: array
+          items:
+            type: string
+      - name: page_size
+        in: query
+        required: false
+        description: Size of a single page i.e. how many records to send back in the response.
+        schema:
+          type: integer
+      - name: page
+        in: query
+        required: false
+        description: Page number.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NetworkFeedResponse'
+        '401':
+          description: Invalid api key unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiErrorResponse'
+components:
+  schemas:
+    ApiErrorResponse:
+      type: object
+      properties:
+        error:
+          $ref: '#/components/schemas/ApiError'
+      required:
+      - error
+    NodeUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the node update.
+        category:
+          type: string
+          description: Node update category.
+        chain:
+          type: string
+          description: Node update chain.
+        description:
+          type: string
+          description: Node update description.
+        repo_name:
+          type: string
+          description: Name of repository that contains the update code.
+        tag:
+          type: string
+          description: Node update tag. The tag contains the update version.
+        network:
+          type: string
+          description: Node update network.
+        client:
+          type: string
+          description: Node update client depending on the chain.
+        release_date:
+          type: integer
+          description: Release date of the update (unix epoch timestamp).
+        release_notes_url:
+          type: string
+          description: Link to github repository release notes.
+        build_artifacts:
+          type: array
+          items:
+            $ref: '#/components/schemas/BuildArtifact'
+        version:
+          type: string
+          description: Version of the node update.
+        commit_hash:
+          type: string
+          description: Commit hash of the node update.
+        priority:
+          type: string
+          description: Priority level of the node update.
+        prerequisites:
+          type: array
+          items:
+            type: string
+          description: Array of prerequisites for the node update.
+        breaking_changes:
+          type: boolean
+          description: Whether the update has breaking changes.
+        breaking_change_summary:
+          type: string
+          description: Summary of the breaking changes.
+        upcoming_network_upgrade:
+          type: string
+          description: Information about any upcoming network upgrades.
+        required_for_upcoming_upgrade:
+          type: boolean
+          description: Whether the update is required for an upcoming network upgrade.
+      required:
+      - name
+      - category
+      - chain
+      - description
+      - repo_name
+      - tag
+      - network
+      - client
+      - release_date
+      - release_notes_url
+      - build_artifacts
+    NetworkFeedResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/NetworkFeedAnnouncement'
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+      required:
+      - result
+      - metadata
+    NodeUpdatesResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/NodeUpdate'
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+      required:
+      - result
+      - metadata
+    Metadata:
+      type: object
+      properties:
+        page_size:
+          type: integer
+          description: Size of a single page i.e. how many records to send back in the response.
+        page:
+          type: integer
+          description: Page number.
+        total_pages:
+          type: integer
+          description: Total pages with the given page_size.
+      required:
+      - page_size
+      - page
+      - total_pages
+    BuildArtifact:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Build artifact type (docker, genesis or node).
+        url:
+          type: string
+          description: Node update binary download url.
+        os:
+          type: string
+          description: Node update binary compatible os.
+        md5:
+          type: string
+          description: Node update binary md5.
+      required:
+      - type
+      - url
+    ApiError:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message.
+        status:
+          type: integer
+          description: HTTP status code.
+        inner_errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiError'
+          description: Array of errors which led to the error.
+      required:
+      - message
+      - status
+    NetworkFeedAnnouncement:
+      type: object
+      properties:
+        labels:
+          type: array
+          items:
+            type: string
+          description: Type of feed (announcement, general information, time sensitive, software upgrade, problem, needs action).
+        chain:
+          type: string
+          description: Network feed chain.
+        event:
+          type: string
+          description: Title of the network feed event.
+        description:
+          type: string
+          description: Description of the network feed event.
+        network:
+          type: string
+          description: Network (mainnet, testnet, devnet).
+        clients:
+          type: array
+          items:
+            type: string
+          description: Array of clients this feed corresponds to depending on the chain.
+        additional_info_url:
+          type: string
+          description: Link to additional information about the feed.
+      required:
+      - labels
+      - chain
+      - event
+      - description
+      - network
+      - clients
+      - additional_info_url
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: x-api-key
+      description: API key generated from the Scale3 Autopilot Intel tab (Enterprise license required). Requests must also send the header x-user-agent with value s3l-web-client.
