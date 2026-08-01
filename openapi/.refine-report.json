@@ -1,0 +1,14 @@
+{
+  "provider": "scale3",
+  "sources": [
+    "scale3-blockchain-intelligence-api-openapi.yml"
+  ],
+  "outputs": [
+    "scale3-blockchain-intelligence-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

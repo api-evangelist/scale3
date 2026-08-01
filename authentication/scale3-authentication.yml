@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/scale3-blockchain-intelligence-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  description: API key generated from the Scale3 Autopilot Intel tab (Enterprise license required).
+    Requests must also send the header x-user-agent with value s3l-web-client.
+  sources:
+  - openapi/scale3-blockchain-intelligence-openapi.yml

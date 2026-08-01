@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/scale3-blockchain-intelligence-openapi.yml
+format: custom-envelope
+envelope:
+  description: >-
+    Errors are returned as a JSON object with a single `error` property (an
+    ApiError). This is a custom error envelope, not RFC 9457 problem+json.
+  shape: '{ "error": { "message": string, "status": integer, "inner_errors": ApiError[] } }'
+  fields:
+    - name: error.message
+      description: Human-readable error message.
+    - name: error.status
+      description: HTTP status code, echoed in the body.
+    - name: error.inner_errors
+      description: Optional array of ApiError objects that led to the error.
+problems:
+  - status: 401
+    title: Invalid api key unauthorized
+    detail: >-
+      The x-api-key header is missing or invalid. Generate a key from the
+      Scale3 Autopilot Intel tab (Enterprise license required) and send it in
+      the x-api-key header along with x-user-agent: s3l-web-client.
+    example: '{ "error": { "message": "Invalid api key unauthorized", "status": 401 } }'
+    source_operations:
+      - openapi/scale3-blockchain-intelligence-openapi.yml#getNodeUpdates
+      - openapi/scale3-blockchain-intelligence-openapi.yml#getNetworkFeed

@@ -1,0 +1,52 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/scale3-blockchain-intelligence-openapi.yml
+entities:
+  - name: NodeUpdate
+    description: A blockchain node software update for a chain/client.
+    key_fields: [name, chain, client, tag, version, release_date]
+    returned_by: getNodeUpdates
+  - name: BuildArtifact
+    description: A downloadable build artifact (docker, genesis or node binary) attached to a NodeUpdate.
+    key_fields: [type, url, os, md5]
+    returned_by: getNodeUpdates
+  - name: NetworkFeedAnnouncement
+    description: A network intelligence feed item / announcement for a chain.
+    key_fields: [labels, chain, event, network, clients]
+    returned_by: getNetworkFeed
+  - name: Metadata
+    description: Pagination metadata attached to list responses.
+    key_fields: [page, page_size, total_pages]
+    returned_by: [getNodeUpdates, getNetworkFeed]
+  - name: ApiError
+    description: Error object returned inside the error envelope.
+    key_fields: [message, status, inner_errors]
+relationships:
+  - from: NodeUpdate
+    to: BuildArtifact
+    kind: has_many
+    via: build_artifacts
+  - from: NodeUpdatesResponse
+    to: NodeUpdate
+    kind: has_many
+    via: result
+  - from: NodeUpdatesResponse
+    to: Metadata
+    kind: has_one
+    via: metadata
+  - from: NetworkFeedResponse
+    to: NetworkFeedAnnouncement
+    kind: has_many
+    via: result
+  - from: NetworkFeedResponse
+    to: Metadata
+    kind: has_one
+    via: metadata
+  - from: ApiError
+    to: ApiError
+    kind: has_many
+    via: inner_errors
+identifiers:
+  chain:
+    description: Chains are referenced by short identifier across both entities.
+    examples: [eth, btc, sol, sui, ada, dot, atom, avax, near, op, arb, polygon]

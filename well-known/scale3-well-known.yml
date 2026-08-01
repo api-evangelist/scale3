@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of the Scale3 hosts
+hosts:
+  - host: https://www.scale3labs.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://docs.scale3labs.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+notes: >-
+  No /.well-known/ discovery documents are published on the Scale3 website or
+  docs host (all probes returned 404). The app host (app.scale3labs.com)
+  returns 307 redirects for these paths. Absence is recorded as valid data.

@@ -1,0 +1,24 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.scale3labs.com/command-line-interface/introduction
+name: scale3cli
+description: >-
+  The Scale3 CLI (scale3cli) is installed on a blockchain node to link it to
+  Scale3 Autopilot for monitoring and logging. It is distributed as an install
+  script fetched from the Scale3 backend and authenticated with an API key.
+install:
+  methods:
+    - type: script
+      steps:
+        - 'curl -L -G --fail "https://web-backend.scale3production.com/cli/binary" | tar -xz'
+        - 'chmod a+x uninstallcli.sh'
+        - './installcli.sh -k <YOUR_API_KEY>'
+  auth: API key passed via the -k flag to installcli.sh
+uninstall:
+  docs: https://docs.scale3labs.com/command-line-interface/uninstall-Scale3-Cli
+flows:
+  - name: Link a node for monitoring
+    docs: https://docs.scale3labs.com/nodepilot/linking-a-node
+  - name: Set up live-tail logging
+    docs: https://docs.scale3labs.com/logging/getting-started
+docs: https://docs.scale3labs.com/command-line-interface/introduction

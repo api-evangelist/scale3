@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.scale3labs.com/intel/blockchain-intelligence/introduction
+versioning:
+  scheme: unversioned-path
+  notes: >-
+    The Blockchain Intelligence API is served from
+    https://web-backend.scale3production.com with no version segment in the
+    path. No dated or header-based versioning policy is published.
+deprecation:
+  policy_documented: false
+  sunset_header: false
+sla:
+  documented: false
+  notes: >-
+    Custom SLAs are offered on the Enterprise plan per the pricing page, but no
+    numeric uptime target is published.
+status_page: https://scale3labs.statuspage.io
+status_page_alias: https://status.scale3labs.com
+availability:
+  enterprise_only: true
+  notes: The Blockchain Intelligence API is available to Enterprise users only.
+deprecated_operations: []

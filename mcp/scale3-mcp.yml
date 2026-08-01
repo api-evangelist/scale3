@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/scale3-blockchain-intelligence-openapi.yml
+notes: >-
+  No official hosted/remote MCP server is published by Scale3 Labs. This is a
+  candidate tool list derived one-to-one from the Blockchain Intelligence API
+  operations, as a starting point for an MCP wrapper.
+server:
+  name: scale3-blockchain-intelligence
+  transport: http
+tools:
+  - name: get_node_updates
+    description: >-
+      Query the latest blockchain node software updates for a chain/client
+      (version, commit hash, release date, breaking changes, build artifacts).
+    source_operation: openapi/scale3-blockchain-intelligence-openapi.yml#getNodeUpdates
+  - name: get_network_feed
+    description: >-
+      Query the network intelligence feed (announcements) for a chain and
+      network.
+    source_operation: openapi/scale3-blockchain-intelligence-openapi.yml#getNetworkFeed

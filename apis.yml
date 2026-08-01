@@ -1,25 +1,129 @@
 aid: scale3
 name: Scale3
-description: Scale3 is a company surfaced as a portfolio company of redpoint-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Scale3 Labs is a modern observability and infrastructure platform for Web3
+  and generative AI. Its Web3 products (Autopilot, Nodepilot and Blockchain
+  Intelligence) let node operators and validators deploy, monitor, log and
+  alert on blockchain nodes across 40+ chains including Ethereum, Sui, Solana,
+  Cosmos and Polkadot, with a Blockchain Intelligence REST API that surfaces
+  node software updates and network announcements. Scale3 also builds Langtrace,
+  an open-source OpenTelemetry-based observability SDK for LLM applications.
+  The company is SOC 2 Type 1 certified and is backed by Redpoint Ventures.
 url: https://raw.githubusercontent.com/api-evangelist/scale3/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.scale3labs.com/assets/scale3-opengraph.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - redpoint-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-stub
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Blockchain
+- Web3
+- Node Monitoring
+- Observability
+- Infrastructure
+- Validators
+- DevOps
+- Alerting
+- LLM Observability
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: scale3:scale3-blockchain-intelligence-api
+  name: Scale3 Blockchain Intelligence API
+  description: Node software updates and network intelligence feeds
+  humanURL: https://docs.scale3labs.com/intel/blockchain-intelligence/introduction
+  baseURL: https://web-backend.scale3production.com
+  tags:
+  - Blockchain Intelligence
+  properties:
+  - type: OpenAPI
+    url: openapi/scale3-blockchain-intelligence-api-openapi.yml
+  - type: Authentication
+    url: authentication/scale3-authentication.yml
+  - type: Conventions
+    url: conventions/scale3-conventions.yml
+  - type: ErrorCatalog
+    url: errors/scale3-problem-types.yml
+  - type: DataModel
+    url: data-model/scale3-data-model.yml
 common:
 - type: Website
   url: https://www.scale3labs.com/
+- type: DeveloperPortal
+  url: https://docs.scale3labs.com/introduction
+- type: Documentation
+  url: https://docs.scale3labs.com/introduction
+- type: APIReference
+  url: https://docs.scale3labs.com/intel/blockchain-intelligence/introduction
+- type: GettingStarted
+  url: https://docs.scale3labs.com/intel/blockchain-intelligence/introduction
+- type: Pricing
+  url: https://www.scale3labs.com/pricing
+- type: SignUp
+  url: https://app.scale3labs.com/signin
+- type: Blog
+  url: https://medium.com/scale3-labs
+- type: GitHubOrganization
+  url: https://github.com/Scale3-Labs
+- type: Support
+  url: mailto:support@scale3labs.com
+- type: TermsOfService
+  url: https://www.scale3labs.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.scale3labs.com/privacy-policy
+- type: StatusPage
+  url: https://scale3labs.statuspage.io
+- type: Compliance
+  url: https://www.scale3labs.com/security
+- type: LLMsTxt
+  url: llms/scale3-llms.txt
+- type: Packages
+  url: packages/scale3-packages.yml
+- type: SDKs
+  url: packages/scale3-packages.yml
+- type: CLI
+  url: cli/scale3-cli.yml
+- type: Webhooks
+  url: asyncapi/scale3-webhooks.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: WellKnown
+  url: well-known/scale3-well-known.yml
+- type: Conformance
+  url: conformance/scale3-conformance.yml
+- type: Lifecycle
+  url: lifecycle/scale3-lifecycle.yml
+- type: TrustCenter
+  url: security/scale3-trust-center.yml
+- type: DomainSecurity
+  url: security/scale3-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/scale3-agentic-access.yml
+- type: Authentication
+  url: authentication/scale3-authentication.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v1

@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.scale3labs.com/alerting/introduction
+spec_type: Webhooks
+description: >-
+  Scale3 Autopilot delivers alert events to a webhook endpoint you register in
+  the Integrations tab. Register a Webhook URL and Scale3 pushes alert payloads
+  to it. Alerts can also be routed to Email, Slack, PagerDuty, OpsGenie and
+  Telegram; the Webhook channel is the programmatic (event-push) surface.
+delivery:
+  channel: webhook
+  setup: >-
+    Integrations tab > Connect under Webhook > enter your Webhook URL and
+    register. Verified when the Webhook shows "Connected".
+  docs: https://docs.scale3labs.com/alerting/channels/webhook
+event_types:
+  - name: intel
+    description: Blockchain / network intelligence announcements.
+    docs: https://docs.scale3labs.com/alerting/types/intel
+  - name: node-health
+    description: Node health alerts (node up/down, sync, resource conditions).
+    docs: https://docs.scale3labs.com/alerting/types/node-health
+  - name: validator-alerts
+    description: Validator metric alerts.
+    docs: https://docs.scale3labs.com/alerting/types/validator-alerts
+other_channels:
+  - email
+  - slack
+  - pagerduty
+  - opsgenie
+  - telegram
+notes: >-
+  No AsyncAPI document is published for these events; this captures the webhook
+  event-delivery surface. No message JSON Schema is published by Scale3.

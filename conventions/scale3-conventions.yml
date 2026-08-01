@@ -1,0 +1,55 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.scale3labs.com/intel/blockchain-intelligence/introduction
+scope: Scale3 Blockchain Intelligence API
+authentication:
+  style: api-key-header
+  header: x-api-key
+  additional_header:
+    name: x-user-agent
+    value: s3l-web-client
+    required: true
+  notes: >-
+    Every request must send both the x-api-key header (Enterprise-license API
+    key) and the x-user-agent header set to s3l-web-client. See
+    authentication/scale3-authentication.yml.
+idempotency:
+  supported: false
+  notes: >-
+    The public Blockchain Intelligence API is read-only (GET /node_updates and
+    GET /feed), so there is no idempotency-key contract. No idempotency pointer
+    is emitted.
+pagination:
+  style: page-number
+  params:
+    - page
+    - page_size
+  response_fields:
+    - metadata.page
+    - metadata.page_size
+    - metadata.total_pages
+  notes: Page-number pagination; total_pages is returned in the metadata block.
+filtering:
+  supported: true
+  library: api-query-params
+  docs: https://www.npmjs.com/package/api-query-params
+  notes: >-
+    Advanced filtering, sorting, and field selection are supported via the
+    api-query-params conventions, e.g. sort=priority,-release_date and
+    fields=name,version,release_date.
+sorting:
+  supported: true
+  param: sort
+  example: sort=priority,-release_date
+field_selection:
+  supported: true
+  param: fields
+  example: fields=name,version,release_date
+error_envelope:
+  shape: '{ "error": { "message": string, "status": integer, "inner_errors"?: ApiError[] } }'
+  ref: errors/scale3-problem-types.yml
+versioning:
+  ref: lifecycle/scale3-lifecycle.yml
+rate_limiting:
+  documented: false
+  notes: No rate-limit signaling is documented in the public API reference.

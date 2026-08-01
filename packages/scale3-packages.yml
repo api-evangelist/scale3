@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/Scale3-Labs
+notes: >-
+  First-party client libraries published by Scale3 Labs. The Langtrace SDKs
+  instrument LLM applications with OpenTelemetry (Scale3's open-source
+  Langtrace AI observability product). The Blockchain Intelligence REST API is
+  called directly over HTTPS with an x-api-key header and ships no dedicated
+  client SDK; the Scale3 CLI (see cli/) is distributed as an install script.
+packages:
+  - language: python
+    registry: pypi
+    name: langtrace-python-sdk
+    url: https://pypi.org/project/langtrace-python-sdk/
+    install: pip install langtrace-python-sdk
+    repository: https://github.com/Scale3-Labs/langtrace-python-sdk
+    license: Apache-2.0
+    product: langtrace
+    official: true
+  - language: javascript
+    registry: npm
+    name: "@langtrase/typescript-sdk"
+    url: https://www.npmjs.com/package/@langtrase/typescript-sdk
+    install: npm install @langtrase/typescript-sdk
+    license: Apache-2.0
+    product: langtrace
+    official: true

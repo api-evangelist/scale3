@@ -1,0 +1,12 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/scale3-blockchain-intelligence-openapi.yml
+skills:
+  - file: scale3-check-node-updates.md
+    name: Check blockchain node software updates
+    api: openapi/scale3-blockchain-intelligence-openapi.yml
+    operations: [getNodeUpdates]
+  - file: scale3-query-network-feed.md
+    name: Query the blockchain network intelligence feed
+    api: openapi/scale3-blockchain-intelligence-openapi.yml
+    operations: [getNetworkFeed]

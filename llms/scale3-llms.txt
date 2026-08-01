@@ -1,0 +1,55 @@
+# Scale3Labs
+
+## Docs
+
+- [Email](https://docs.scale3labs.com/alerting/channels/email.md)
+- [Setup](https://docs.scale3labs.com/alerting/channels/introduction.md): Alert Channels allow you to route alerts to one of more channels of your choice. We currently support the following channels
+- [OpsGenie](https://docs.scale3labs.com/alerting/channels/opsgenie.md): Steps to setup alerts for OpsGenie
+- [PagerDuty](https://docs.scale3labs.com/alerting/channels/pagerduty.md): Steps to setup alerts for PagerDuty
+- [Slack](https://docs.scale3labs.com/alerting/channels/slack.md): Steps to setup alerts for Slack
+- [Telegram](https://docs.scale3labs.com/alerting/channels/telegram.md)
+- [Webhook](https://docs.scale3labs.com/alerting/channels/webhook.md): Steps to setup alerts for Webhook
+- [Introduction](https://docs.scale3labs.com/alerting/introduction.md)
+- [Silence grafana alerts](https://docs.scale3labs.com/alerting/silence-grafana-alerts.md)
+- [Intel](https://docs.scale3labs.com/alerting/types/intel.md)
+- [Node health](https://docs.scale3labs.com/alerting/types/node-health.md)
+- [Validator alerts](https://docs.scale3labs.com/alerting/types/validator-alerts.md)
+- [Install Scale3 CLI](https://docs.scale3labs.com/command-line-interface/install-Scale3-Cli.md)
+- [Scale3 Labs CLI](https://docs.scale3labs.com/command-line-interface/introduction.md)
+- [Uninstall Scale3 Cli](https://docs.scale3labs.com/command-line-interface/uninstall-Scale3-Cli.md)
+- [Introduction](https://docs.scale3labs.com/intel/blockchain-intelligence/introduction.md)
+- [Blockchain Intelligence APIs: GET Network Feed](https://docs.scale3labs.com/intel/blockchain-intelligence/network-announcements.md): This endpoint allows you to query our network intelligence feed for a specific chain,  network (mainnet/testnet) and get the latest announcements from Discord for that specific chain. Find the list of supported chains in the chain parameter below. You will need your API key to send requests. If you…
+- [Blockchain Intelligence APIs: GET Node Updates](https://docs.scale3labs.com/intel/blockchain-intelligence/node-software-updates.md): This endpoint allows you to query our node update intelligence for a specific chain,  network (mainnet/testnet) and get the latest updates for that specific chain. Find the list of supported chains in the chain parameter below. You will need your API key to send requests. If you have any questions o…
+- [Introduction](https://docs.scale3labs.com/intel/introduction.md)
+- [Node updates](https://docs.scale3labs.com/intel/node-updates.md)
+- [Introduction](https://docs.scale3labs.com/introduction.md): Welcome to the Scale3 Documentation. Here you will find all the information you need to get started with Scale3.
+- [Live Tail Logging With Scale3 Autopilot](https://docs.scale3labs.com/logging/getting-started.md)
+- [FAQs](https://docs.scale3labs.com/logging/logging-faqs.md): Some collection of questions that you might have.
+- [Node monitoring with Grafana dashboards (Autopilot)](https://docs.scale3labs.com/monitoring/introduction.md): Walkthrough of steps to onboard your node for monitoring.
+- [Monitor your ETH-Docker or any docker based node using Scale3 Autopilot](https://docs.scale3labs.com/monitoring/monitor-eth-docker.md)
+- [Monitoring dashboard for Kubernetes hosted node.](https://docs.scale3labs.com/monitoring/push-method-k8s.md)
+- [Introduction](https://docs.scale3labs.com/node-setup/introduction.md): Blockchain Node Setup and Operations
+- [Running A Sui Node Manually on Contabo](https://docs.scale3labs.com/node-setup/run-sui-fullnode-manually.md): This is a walkthrough on how to setup a server on Contabo for Sui node
+- [Running A Sui FullNode](https://docs.scale3labs.com/node-setup/sui-wizard/running-a-sui-fullnode.md): Steps to setup a Sui fullnode on devnet/testnet
+- [Running A Sui Validator](https://docs.scale3labs.com/node-setup/sui-wizard/running-a-sui-validator.md): Steps to setup a Sui Validator on testnet
+- [FAQs](https://docs.scale3labs.com/node-setup/sui-wizard/sui-node-helper-faqs.md): Collection of common questions around SUI Node Helper
+- [Sui Node Operations](https://docs.scale3labs.com/node-setup/sui-wizard/sui-node-operations.md): These are list of node oprations that you can perform using Sui Wizard
+- [Introduction](https://docs.scale3labs.com/node-setup/sui-wizard/sui-wizard-introduction.md): Welcome to the SUI Wizard Documentation
+- [Deploying a node](https://docs.scale3labs.com/nodepilot/deploying-a-node.md)
+- [Nodepilot](https://docs.scale3labs.com/nodepilot/introduction.md)
+- [Linking a node](https://docs.scale3labs.com/nodepilot/linking-a-node.md)
+- [Cost Estimation](https://docs.scale3labs.com/nodepilot/nodepilot-cost-estimation.md)
+- [FAQs](https://docs.scale3labs.com/nodepilot/nodepilot-faqs.md): Some collection of questions that you might have.
+- [Guide for AWS](https://docs.scale3labs.com/nodepilot/nodepilot-on-aws.md): This doc will help you setup Nodepilot on AWS Account
+- [Guide for Azure](https://docs.scale3labs.com/nodepilot/nodepilot-on-azure.md): This doc will help you setup Nodepilot on Azure Account
+- [Guide for GCP](https://docs.scale3labs.com/nodepilot/nodepilot-on-gcp.md): This doc will help you setup nodepilot for Google Cloud Platform Account
+- [Nodepilot Shared Responsibility](https://docs.scale3labs.com/nodepilot/responsibility-model.md)
+- [Ethereum Validator Setup](https://docs.scale3labs.com/nodepilot/supported-chains/ethereum-validator.md)
+- [Nodepilot Base Instructions](https://docs.scale3labs.com/nodepilot/supported-chains/nodepilot-base.md): Important note for Base node operators
+- [Nodepilot FLOW Guide](https://docs.scale3labs.com/nodepilot/supported-chains/nodepilot-flow.md)
+
+## Optional
+
+- [Blog](https://medium.com/scale3-labs)
+- [Community](https://discord.com/invite/h74CkNv4h9)
+- [Contact Us](mailto:contact@scale3labs.com)
