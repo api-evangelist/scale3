@@ -68,6 +68,10 @@ apis:
   - type: DataModel
     url: data-model/scale3-data-model.yml
 common:
+- type: MCPServer
+  url: mcp/scale3-mcp.yml
+- type: Overlay
+  url: overlays/scale3-blockchain-intelligence-overlay.yaml
 - type: Website
   url: https://www.scale3labs.com/
 - type: DeveloperPortal
