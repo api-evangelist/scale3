@@ -1,0 +1,160 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Scale3 Blockchain Intelligence API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Blockchain Intelligence",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get node updates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://web-backend.scale3production.com/node_updates",
+            "params": [
+              {
+                "name": "chain",
+                "value": "",
+                "type": "query",
+                "description": "Blockchain identifier. Supported values include aptos, algo, arb, avax, base, bnb/bsc, link, btc, bch, ada, tia, celo, atom, cro, dash, doge, eos, eth, etc, ftm, fil, flr, flow, harmony, hbar, hnt, icp, inj, kava, ksm, ltc, mina, near, op, dot, polygon, xrp, sei, sol, stx, xlm, sui, xtz, trx, ton, vet, zec."
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "Node update category."
+              },
+              {
+                "name": "repo_name",
+                "value": "",
+                "type": "query",
+                "description": "Name of repository that contains the update code."
+              },
+              {
+                "name": "tag",
+                "value": "",
+                "type": "query",
+                "description": "Node update tag. The tag contains the update version."
+              },
+              {
+                "name": "network",
+                "value": "",
+                "type": "query",
+                "description": "Node update network."
+              },
+              {
+                "name": "client",
+                "value": "",
+                "type": "query",
+                "description": "Node update client depending on the chain. For chains with no client the default value is the chain itself (e.g. geth, lighthouse, sui)."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Version of the node update."
+              },
+              {
+                "name": "priority",
+                "value": "",
+                "type": "query",
+                "description": "Priority/severity level of the node update."
+              },
+              {
+                "name": "breaking_changes",
+                "value": "",
+                "type": "query",
+                "description": "Whether the update has breaking changes."
+              },
+              {
+                "name": "required_for_upcoming_upgrade",
+                "value": "",
+                "type": "query",
+                "description": "Whether the update is required for an upcoming network upgrade."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Size of a single page i.e. how many records to send back in the response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              }
+            ]
+          },
+          "docs": "Query node update intelligence for a specific chain and network and get the latest node software updates for that chain. Supports advanced filtering, sorting, field selection and pagination via query parameters. Requires an API key."
+        },
+        {
+          "info": {
+            "name": "Get network feed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://web-backend.scale3production.com/feed",
+            "params": [
+              {
+                "name": "chain",
+                "value": "",
+                "type": "query",
+                "description": "Blockchain identifier. See getNodeUpdates for the full list of supported chains."
+              },
+              {
+                "name": "labels",
+                "value": "",
+                "type": "query",
+                "description": "Type of feed. One of announcement, general information, time sensitive, software upgrade, problem, needs action."
+              },
+              {
+                "name": "network",
+                "value": "",
+                "type": "query",
+                "description": "Network."
+              },
+              {
+                "name": "clients",
+                "value": "",
+                "type": "query",
+                "description": "Array of clients this feed corresponds to depending on the chain."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "Size of a single page i.e. how many records to send back in the response."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number."
+              }
+            ]
+          },
+          "docs": "Query the network intelligence feed for a specific chain and network and get the latest announcements (aggregated from Discord and other channels) for that chain. Supports filtering by label and client, and pagination. Requires an API key."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

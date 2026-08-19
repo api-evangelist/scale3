@@ -1,0 +1,563 @@
+{
+  "item": [
+    {
+      "id": "7b459c94-28c0-4123-8dbe-0cbb2e4a83b7",
+      "name": "Blockchain Intelligence",
+      "description": {
+        "content": "Node software updates and network intelligence feeds",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b935fb85-97fc-4cc0-99d3-47913cf9da84",
+          "name": "Get node updates",
+          "request": {
+            "name": "Get node updates",
+            "description": {
+              "content": "Query node update intelligence for a specific chain and network and get the latest node software updates for that chain. Supports advanced filtering, sorting, field selection and pagination via query parameters. Requires an API key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "node_updates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "<string>",
+                  "description": "(Required) Blockchain identifier. Supported values include aptos, algo, arb, avax, base, bnb/bsc, link, btc, bch, ada, tia, celo, atom, cro, dash, doge, eos, eth, etc, ftm, fil, flr, flow, harmony, hbar, hnt, icp, inj, kava, ksm, ltc, mina, near, op, dot, polygon, xrp, sei, sol, stx, xlm, sui, xtz, trx, ton, vet, zec."
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "<string>",
+                  "description": "Node update category."
+                },
+                {
+                  "disabled": false,
+                  "key": "repo_name",
+                  "value": "<string>",
+                  "description": "Name of repository that contains the update code."
+                },
+                {
+                  "disabled": false,
+                  "key": "tag",
+                  "value": "<string>",
+                  "description": "Node update tag. The tag contains the update version."
+                },
+                {
+                  "disabled": false,
+                  "key": "network",
+                  "value": "<string>",
+                  "description": "Node update network."
+                },
+                {
+                  "disabled": false,
+                  "key": "client",
+                  "value": "<string>",
+                  "description": "Node update client depending on the chain. For chains with no client the default value is the chain itself (e.g. geth, lighthouse, sui)."
+                },
+                {
+                  "disabled": false,
+                  "key": "version",
+                  "value": "<string>",
+                  "description": "Version of the node update."
+                },
+                {
+                  "disabled": false,
+                  "key": "priority",
+                  "value": "<string>",
+                  "description": "Priority/severity level of the node update."
+                },
+                {
+                  "disabled": false,
+                  "key": "breaking_changes",
+                  "value": "<boolean>",
+                  "description": "Whether the update has breaking changes."
+                },
+                {
+                  "disabled": false,
+                  "key": "required_for_upcoming_upgrade",
+                  "value": "<boolean>",
+                  "description": "Whether the update is required for an upcoming network upgrade."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Size of a single page i.e. how many records to send back in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Page number."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b89208d1-9d86-40f4-a27d-73e20d880bca",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "node_updates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "repo_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "network",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "priority",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "breaking_changes",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "required_for_upcoming_upgrade",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": [\n    {\n      \"name\": \"string\",\n      \"category\": \"string\",\n      \"chain\": \"string\",\n      \"description\": \"string\",\n      \"repo_name\": \"string\",\n      \"tag\": \"string\",\n      \"network\": \"string\",\n      \"client\": \"string\",\n      \"release_date\": 6405,\n      \"release_notes_url\": \"string\",\n      \"build_artifacts\": [\n        {\n          \"type\": \"string\",\n          \"url\": \"string\",\n          \"os\": \"string\",\n          \"md5\": \"string\"\n        },\n        {\n          \"type\": \"string\",\n          \"url\": \"string\",\n          \"os\": \"string\",\n          \"md5\": \"string\"\n        }\n      ],\n      \"version\": \"string\",\n      \"commit_hash\": \"string\",\n      \"priority\": \"string\",\n      \"prerequisites\": [\n        \"string\",\n        \"string\"\n      ],\n      \"breaking_changes\": true,\n      \"breaking_change_summary\": \"string\",\n      \"upcoming_network_upgrade\": \"string\",\n      \"required_for_upcoming_upgrade\": false\n    },\n    {\n      \"name\": \"string\",\n      \"category\": \"string\",\n      \"chain\": \"string\",\n      \"description\": \"string\",\n      \"repo_name\": \"string\",\n      \"tag\": \"string\",\n      \"network\": \"string\",\n      \"client\": \"string\",\n      \"release_date\": 213,\n      \"release_notes_url\": \"string\",\n      \"build_artifacts\": [\n        {\n          \"type\": \"string\",\n          \"url\": \"string\",\n          \"os\": \"string\",\n          \"md5\": \"string\"\n        },\n        {\n          \"type\": \"string\",\n          \"url\": \"string\",\n          \"os\": \"string\",\n          \"md5\": \"string\"\n        }\n      ],\n      \"version\": \"string\",\n      \"commit_hash\": \"string\",\n      \"priority\": \"string\",\n      \"prerequisites\": [\n        \"string\",\n        \"string\"\n      ],\n      \"breaking_changes\": false,\n      \"breaking_change_summary\": \"string\",\n      \"upcoming_network_upgrade\": \"string\",\n      \"required_for_upcoming_upgrade\": true\n    }\n  ],\n  \"metadata\": {\n    \"page_size\": 1604,\n    \"page\": 5371,\n    \"total_pages\": 5154\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4187c42c-8adb-4157-9ae5-f4674f07cb6e",
+              "name": "Invalid api key unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "node_updates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "category",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "repo_name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "tag",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "network",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "client",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "version",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "priority",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "breaking_changes",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "required_for_upcoming_upgrade",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"status\": 1517,\n    \"inner_errors\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ApiError detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ApiError detected>\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b51c55b-0bc3-487c-8c00-3969ef5b21f0",
+          "name": "Get network feed",
+          "request": {
+            "name": "Get network feed",
+            "description": {
+              "content": "Query the network intelligence feed for a specific chain and network and get the latest announcements (aggregated from Discord and other channels) for that chain. Supports filtering by label and client, and pagination. Requires an API key.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "feed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "chain",
+                  "value": "<string>",
+                  "description": "(Required) Blockchain identifier. See getNodeUpdates for the full list of supported chains."
+                },
+                {
+                  "disabled": false,
+                  "key": "labels",
+                  "value": "<string>",
+                  "description": "Type of feed. One of announcement, general information, time sensitive, software upgrade, problem, needs action."
+                },
+                {
+                  "disabled": false,
+                  "key": "network",
+                  "value": "<string>",
+                  "description": "Network."
+                },
+                {
+                  "disabled": false,
+                  "key": "clients",
+                  "value": "<string>",
+                  "description": "Array of clients this feed corresponds to depending on the chain."
+                },
+                {
+                  "disabled": false,
+                  "key": "clients",
+                  "value": "<string>",
+                  "description": "Array of clients this feed corresponds to depending on the chain."
+                },
+                {
+                  "disabled": false,
+                  "key": "page_size",
+                  "value": "<integer>",
+                  "description": "Size of a single page i.e. how many records to send back in the response."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "<integer>",
+                  "description": "Page number."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f67caa08-4045-4a2e-aaf2-62ef04406f6c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "feed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "labels",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "network",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "clients",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "clients",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result\": [\n    {\n      \"labels\": [\n        \"string\",\n        \"string\"\n      ],\n      \"chain\": \"string\",\n      \"event\": \"string\",\n      \"description\": \"string\",\n      \"network\": \"string\",\n      \"clients\": [\n        \"string\",\n        \"string\"\n      ],\n      \"additional_info_url\": \"string\"\n    },\n    {\n      \"labels\": [\n        \"string\",\n        \"string\"\n      ],\n      \"chain\": \"string\",\n      \"event\": \"string\",\n      \"description\": \"string\",\n      \"network\": \"string\",\n      \"clients\": [\n        \"string\",\n        \"string\"\n      ],\n      \"additional_info_url\": \"string\"\n    }\n  ],\n  \"metadata\": {\n    \"page_size\": 609,\n    \"page\": 9171,\n    \"total_pages\": 7620\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f9ac843c-147e-4d1c-bbdc-b5cd20f1edd8",
+              "name": "Invalid api key unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "feed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "chain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "labels",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "network",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "clients",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "clients",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page_size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"message\": \"string\",\n    \"status\": 1517,\n    \"inner_errors\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ApiError detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/ApiError detected>\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://web-backend.scale3production.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "506fbc9b-88e0-4f86-8c3d-c25f9a5a5172",
+    "name": "Scale3 Blockchain Intelligence API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Scale3 Blockchain Intelligence Service is a REST API that provides real-time information on blockchain node software updates and network intelligence feeds across 40+ chains. Query the latest node updates (version, commit hash, release date, breaking changes, build artifacts) and the network intelligence feed (announcements aggregated from Discord and other channels) for a specific chain and network. Access requires an Enterprise license and an API key generated from the Scale3 Autopilot Intel tab. Derived from the published Scale3 documentation.\n\nContact Support:\n Name: Scale3 Labs Support\n Email: support@scale3labs.com",
+      "type": "text/plain"
+    }
+  }
+}
