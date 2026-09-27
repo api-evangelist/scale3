@@ -179,42 +179,13 @@ paths:
                 $ref: '#/components/schemas/ApiErrorResponse'
 components:
   schemas:
-    NetworkFeedAnnouncement:
+    ApiErrorResponse:
       type: object
       properties:
-        labels:
-          type: array
-          items:
-            type: string
-          description: Type of feed (announcement, general information, time sensitive, software upgrade, problem, needs action).
-        chain:
-          type: string
-          description: Network feed chain.
-        event:
-          type: string
-          description: Title of the network feed event.
-        description:
-          type: string
-          description: Description of the network feed event.
-        network:
-          type: string
-          description: Network (mainnet, testnet, devnet).
-        clients:
-          type: array
-          items:
-            type: string
-          description: Array of clients this feed corresponds to depending on the chain.
-        additional_info_url:
-          type: string
-          description: Link to additional information about the feed.
+        error:
+          $ref: '#/components/schemas/ApiError'
       required:
-      - labels
-      - chain
-      - event
-      - description
-      - network
-      - clients
-      - additional_info_url
+      - error
     ApiError:
       type: object
       properties:
@@ -232,71 +203,6 @@ components:
       required:
       - message
       - status
-    ApiErrorResponse:
-      type: object
-      properties:
-        error:
-          $ref: '#/components/schemas/ApiError'
-      required:
-      - error
-    Metadata:
-      type: object
-      properties:
-        page_size:
-          type: integer
-          description: Size of a single page i.e. how many records to send back in the response.
-        page:
-          type: integer
-          description: Page number.
-        total_pages:
-          type: integer
-          description: Total pages with the given page_size.
-      required:
-      - page_size
-      - page
-      - total_pages
-    NodeUpdatesResponse:
-      type: object
-      properties:
-        result:
-          type: array
-          items:
-            $ref: '#/components/schemas/NodeUpdate'
-        metadata:
-          $ref: '#/components/schemas/Metadata'
-      required:
-      - result
-      - metadata
-    BuildArtifact:
-      type: object
-      properties:
-        type:
-          type: string
-          description: Build artifact type (docker, genesis or node).
-        url:
-          type: string
-          description: Node update binary download url.
-        os:
-          type: string
-          description: Node update binary compatible os.
-        md5:
-          type: string
-          description: Node update binary md5.
-      required:
-      - type
-      - url
-    NetworkFeedResponse:
-      type: object
-      properties:
-        result:
-          type: array
-          items:
-            $ref: '#/components/schemas/NetworkFeedAnnouncement'
-        metadata:
-          $ref: '#/components/schemas/Metadata'
-      required:
-      - result
-      - metadata
     NodeUpdate:
       type: object
       properties:
@@ -372,6 +278,100 @@ components:
       - release_date
       - release_notes_url
       - build_artifacts
+    NetworkFeedAnnouncement:
+      type: object
+      properties:
+        labels:
+          type: array
+          items:
+            type: string
+          description: Type of feed (announcement, general information, time sensitive, software upgrade, problem, needs action).
+        chain:
+          type: string
+          description: Network feed chain.
+        event:
+          type: string
+          description: Title of the network feed event.
+        description:
+          type: string
+          description: Description of the network feed event.
+        network:
+          type: string
+          description: Network (mainnet, testnet, devnet).
+        clients:
+          type: array
+          items:
+            type: string
+          description: Array of clients this feed corresponds to depending on the chain.
+        additional_info_url:
+          type: string
+          description: Link to additional information about the feed.
+      required:
+      - labels
+      - chain
+      - event
+      - description
+      - network
+      - clients
+      - additional_info_url
+    NetworkFeedResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/NetworkFeedAnnouncement'
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+      required:
+      - result
+      - metadata
+    NodeUpdatesResponse:
+      type: object
+      properties:
+        result:
+          type: array
+          items:
+            $ref: '#/components/schemas/NodeUpdate'
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+      required:
+      - result
+      - metadata
+    Metadata:
+      type: object
+      properties:
+        page_size:
+          type: integer
+          description: Size of a single page i.e. how many records to send back in the response.
+        page:
+          type: integer
+          description: Page number.
+        total_pages:
+          type: integer
+          description: Total pages with the given page_size.
+      required:
+      - page_size
+      - page
+      - total_pages
+    BuildArtifact:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Build artifact type (docker, genesis or node).
+        url:
+          type: string
+          description: Node update binary download url.
+        os:
+          type: string
+          description: Node update binary compatible os.
+        md5:
+          type: string
+          description: Node update binary md5.
+      required:
+      - type
+      - url
   securitySchemes:
     apiKey:
       type: apiKey
