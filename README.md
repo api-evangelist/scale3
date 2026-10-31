@@ -64,6 +64,128 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Scale3 is a company surfaced as a portfolio company of redpoint-ventures and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Scale3 Labs is a modern observability and infrastructure platform for Web3 and generative AI. Its Web3 products (Autopilot, Nodepilot and Blockchain Intelligence) let node operators and validators deploy, monitor, log and alert on blockchain nodes across 40+ chains including Ethereum, Sui, Solana, Cosmos and Polkadot, with a Blockchain Intelligence REST API that surfaces node software updates and network announcements. Scale3 also builds Langtrace, an open-source OpenTelemetry-based observability SDK for LLM applications. The company is SOC 2 Type 1 certified and is backed by Redpoint Ventures.
 
-Backed by: redpoint-ventures — https://www.scale3labs.com/
+**Areas:** Company · Blockchain · Web3 · Node Monitoring · Observability · Infrastructure · Validator · DevOps · Alerting · LLM Observability
+
+## Scale3 on APIs.io
+
+Everything profiled for Scale3 is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/scale3/](https://apis.io/providers/scale3/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Scale3 Blockchain Intelligence API](https://apis.io/apis/scale3/scale3-blockchain-intelligence-api/) — Node software updates and network intelligence feeds
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Scale3 Webhooks](https://apis.io/asyncapis/scale3/scale3-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [scale3-blockchain-intelligence](https://apis.io/servers/scale3/scale3-blockchain-intelligence/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Scale3 Agentic Access](https://apis.io/agentic-access/scale3/scale3-agentic-access/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [Scale3 Blockchain Intelligence API](https://apis.io/collections/scale3/open-scale3-blockchain-intelligence-api/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Scale3 Blockchain Intelligence Overlay](https://apis.io/overlays/scale3/scale3-blockchain-intelligence-overlay/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Scale3 Authentication](https://apis.io/security/scale3/scale3-authentication/)
+- [Scale3 Domain Security](https://apis.io/security/scale3/scale3-domain-security/)
+- [Scale3 Trust Center](https://apis.io/security/scale3/scale3-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.scale3labs.com/)
+- [Documentation](https://docs.scale3labs.com/introduction)
+- [Getting started](https://docs.scale3labs.com/intel/blockchain-intelligence/introduction)
+- [API reference](https://docs.scale3labs.com/intel/blockchain-intelligence/introduction)
+- [Pricing](https://www.scale3labs.com/pricing)
+- [Sign up](https://app.scale3labs.com/signin)
+- [Blog](https://medium.com/scale3-labs)
+- [Compliance](https://www.scale3labs.com/security)
+- [Terms of service](https://www.scale3labs.com/terms-of-service)
+- [Privacy policy](https://www.scale3labs.com/privacy-policy)
+- [GitHub](https://github.com/Scale3-Labs)
+- [Status](https://scale3labs.statuspage.io)
+
+## API Evangelist rating
+
+**Kin Score 54.3** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 60.6 |
+| Contract governance | 18.2 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 73.2 |
+| Access clarity | 47.4 |
+
+**Agent readiness 34.3** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/scale3/](https://apis.io/providers/scale3/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Scale3: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/scale3/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
